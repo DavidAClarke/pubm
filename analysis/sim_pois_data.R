@@ -11,18 +11,20 @@ set.seed(42)
 #-------------------------------------------------------------------------------
 load(here(inpath, "covar_dat_full.rdata"))
 
-nphi <- 1
-nsill <- 1
+nphi <- dim(fine_xx_1)[2]
+nsill <- dim(fine_xx_1)[3]
 #-------------------------------------------------------------------------------
 # Generate poisson data
 # Split the data into training and testing set
 #-------------------------------------------------------------------------------
-true_be <- c(1, 0.5, 0.5, 0.5) #B0, B1, B2, B3. Values don't matter at this point.
+b0 <- 1
+b1 <- 0.5
+b2 <- 0.5
+b3 <- 0.5
+true_be <- c(b0, b1, b2, b3) # Values don't matter at this point.
 nn <- nrow(fine_xx_1)
-
 nrep <- 100
 rep_data <- vector("list", length = nrep)
-
 train_idx <- sample(1:nn, nn / 5)
 
 for (r in 1:nrep) {
