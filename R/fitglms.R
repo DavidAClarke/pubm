@@ -2,10 +2,10 @@
 fitglms <- function(zz, xx, xx_ppd, BB, nphi, nsill){ # xx = list of fine covariates
   
   be_est <- vector("list", length = 4)
-  nn <- length(zz)
+  nn <- length(zz[,nphi, nsill])
   KK <- ncol(xx_ppd[[1]][[1]][[1]])
   
-  xxdf <- data.frame(zz = zz)
+  xxdf <- data.frame(zz = zz[,nphi,nsill])
   for(d in 1:length(xx)){
     
     xxv <- xx[[d]][,nphi,nsill]
@@ -48,7 +48,7 @@ fitglms <- function(zz, xx, xx_ppd, BB, nphi, nsill){ # xx = list of fine covari
   #-------------------------------------------------------------------------------
   # GLM-plugin
   #-------------------------------------------------------------------------------
-  xx_plugdf <- data.frame(zz = zz)
+  xx_plugdf <- data.frame(zz = zz[,nphi,nsill])
   
   for(d in 1:length(xx_ppd)){
     
@@ -92,7 +92,7 @@ fitglms <- function(zz, xx, xx_ppd, BB, nphi, nsill){ # xx = list of fine covari
   
   for (k in 1:KK) {
     
-    xx_ensdf <- data.frame(zz = zz)
+    xx_ensdf <- data.frame(zz = zz[,nphi,nsill])
     
     for(d in 1:length(xx_ppd)){
       
@@ -137,7 +137,7 @@ fitglms <- function(zz, xx, xx_ppd, BB, nphi, nsill){ # xx = list of fine covari
   #-------------------------------------------------------------------------------
   # GLM-Berkson
   #-------------------------------------------------------------------------------
-  xx_bksdf <- data.frame(zz = zz)
+  xx_bksdf <- data.frame(zz = zz[,nphi,nsill])
   
   for(d in 1:length(xx_ppd)){
     
@@ -157,7 +157,7 @@ fitglms <- function(zz, xx, xx_ppd, BB, nphi, nsill){ # xx = list of fine covari
   
   for (k in 1:KK) {
     
-    xx_bksdf2 <- data.frame(zz = zz)
+    xx_bksdf2 <- data.frame(zz = zz[,nphi,nsill])
     
     # Note: data.frame is subsequently zz, x1, delta_x1, x2, delta_x2, x3, delta_x3
     for(d in 1:length(xx_ppd)){
