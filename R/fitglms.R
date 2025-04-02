@@ -3,7 +3,7 @@
 #' @param zz An array containing fine resolution simulated Poisson data.
 #' @param xx A list containing fine resolution simulated (true) covariate data.
 #' @param xx_ppd A list containing downscaled covariate data.
-#' @param BB Number of BB.
+#' @param BB Number of bootstrapped replicates.
 #' @param nphi Number for nphi.
 #' @param nsill Number for nsill.
 #' @returns A list of length = 2.
