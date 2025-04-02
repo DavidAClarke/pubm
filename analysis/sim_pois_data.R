@@ -19,8 +19,8 @@ nsill <- dim(fine_xx_1)[3]
 #-------------------------------------------------------------------------------
 b0 <- 1
 b1 <- 0.5
-b2 <- 0.5
-b3 <- 0.5
+b2 <- 2
+b3 <- 3
 true_be <- c(b0, b1, b2, b3) # Values don't matter at this point.
 nn <- nrow(fine_xx_1)
 nrep <- 100
