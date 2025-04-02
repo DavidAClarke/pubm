@@ -1,5 +1,13 @@
-## Fit GLMs
-fitglms <- function(zz, xx, xx_ppd, BB, nphi, nsill){ # xx = list of fine covariates
+#' Fit GLMs
+#' 
+#' @param zz An array containing fine resolution simulated Poisson data.
+#' @param xx A list containing fine resolution simulated (true) covariate data.
+#' @param xx_ppd A list containing downscaled covariate data.
+#' @param BB Number of BB.
+#' @param nphi Number for nphi.
+#' @param nsill Number for nsill.
+#' @returns A list of length = 2.
+fitglms <- function(zz, xx, xx_ppd, BB, nphi, nsill){
   
   be_est <- vector("list", length = 4)
   nn <- length(zz[,nphi, nsill])
