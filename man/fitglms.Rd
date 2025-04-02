@@ -13,7 +13,7 @@ fitglms(zz, xx, xx_ppd, BB, nphi, nsill)
 
 \item{xx_ppd}{A list containing downscaled covariate data.}
 
-\item{BB}{Number of BB.}
+\item{BB}{Number of bootstrapped replicates.}
 
 \item{nphi}{Number for nphi.}
 
