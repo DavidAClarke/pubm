@@ -15,6 +15,7 @@ xx3_pred <- loadRData(here(outpath, "sim_all_x3_gpbau_pred.RData"))
 
 ## load response data
 pois_rep <- loadRData(here(outpath, "pois_rep_data.rdata"))
+#pois_rep <- loadRData(here(outpath, "pois_rep_data_all.rdata")) # multiple nphi and nsill
 nrep <- length(pois_rep)
 
 ## combine covariate data into lists
@@ -32,9 +33,13 @@ fine_train_xx <- list(
 #-------------------------------------------------------------------------------
 # Fit GLMs
 #-------------------------------------------------------------------------------
-for(i in 1:1){
+# Loop requires "pois_rep_data_all.rdata" to be loaded
+
+pois_out_list_r <- list()
+
+for(i in 1:2){
   
-  fitted_glms <- fitglms(zz = fine_train_zz, 
+  pois_out_list_r[[i]] <- fitglms(zz = fine_train_zz, 
                          xx = fine_train_xx, 
                          xx_ppd = xx_pred, 
                          BB = 4, 
