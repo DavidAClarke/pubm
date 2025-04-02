@@ -41,6 +41,7 @@ for (r in 1:nrep) {
       xx3 <- fine_xx_3[, i, j]
       yy <- exp(cbind(1, xx1,xx2,xx3) %*% true_be)
       zz <- rpois(nn, yy)
+      #zz <- rlimpois(nn, yy, 0, 10000)
       
       fine_yy[, i, j] <- yy
       fine_zz[, i, j] <- zz
