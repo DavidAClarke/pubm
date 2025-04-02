@@ -32,10 +32,16 @@ fine_train_xx <- list(
 #-------------------------------------------------------------------------------
 # Fit GLMs
 #-------------------------------------------------------------------------------
-fitted_glms <- fitglms(zz = fine_train_zz, 
-                       xx = fine_train_xx, 
-                       xx_ppd = xx_pred, 
-                       BB = 4, 
-                       nphi = 1, 
-                       nsill = 1)
+for(i in 1:1){
+  
+  fitted_glms <- fitglms(zz = fine_train_zz, 
+                         xx = fine_train_xx, 
+                         xx_ppd = xx_pred, 
+                         BB = 4, 
+                         nphi = i, 
+                         nsill = 1)
+  
+}
+
+
 
